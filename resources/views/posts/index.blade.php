@@ -9,5 +9,7 @@
         <h2>{{ $post->title }}</h2>
         <p>{{ $post->content }}</p>
     @endforeach
+    <a href="{{ route('dashboard') }}">Dashboard</a>
+    <a href="{{ route('about') }}">About</a>
 </body>
 </html>
