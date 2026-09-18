@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController; 
+use App\Http\Controllers\LaporanPenjualanController; 
 
 Route::get('/', function () {
     return view('dashboard_pos', [
@@ -68,3 +70,8 @@ Route::get('/produk-toko', function () {
     // Mengirimkan data ke view daftar_produk.blade.php
     return view('daftar_produk', ['produks' => $dataProduk]);
 });
+
+Route::get('/produk', [ProductController::class, 'index']); 
+Route::get('/produk/{id}', [ProductController::class, 'show']);
+
+Route::get('/laporan', LaporanPenjualanController::class);
